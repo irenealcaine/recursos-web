@@ -34,9 +34,15 @@ function App() {
           <h2>{category.categoryName}</h2>
           <ul>
             {category.items.map((item) => (
-              <li key={item.itemId}><a href={item.itemLink}>{item.itemName}</a></li>
+              <li key={item.itemId}>
+                <a href={item.itemLink}>
+                  {item.itemName}
+                </a>
+                <p>{item.itemDesc && item.itemDesc}</p>
+              </li>
             ))}
           </ul>
+          <hr />
         </div>
       ))}
     </>

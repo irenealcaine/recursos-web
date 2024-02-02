@@ -5,3 +5,20 @@
   text-align: center;
 }
 
+hr{
+  width: 100%;
+  opacity: .2;
+  margin-top: 25px;
+}
+li{
+  border: 1px solid white;
+  box-shadow: 5px 5px 10px #0005;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+li p{
+  font-size: smaller;
+  color: #aaa;
+}
