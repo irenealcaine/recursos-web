@@ -14,17 +14,21 @@ ul{
   display: flex;
   gap: 10px;
   justify-content: center;
+
+  li{
+    border: 1px solid white;
+    box-shadow: 5px 5px 10px #0005;
+    padding: 10px 15px;
+    border-radius: 5px;
+
+    p{
+      font-size: smaller;
+      color: #aaa;
+    }
+  }
 }
 
 
-li{
-  border: 1px solid white;
-  box-shadow: 5px 5px 10px #0005;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
 
-li p{
-  font-size: smaller;
-  color: #aaa;
-}
+
+
