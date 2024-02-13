@@ -19,7 +19,7 @@ function App() {
       setLoading(false)
     }).catch((error) => {
       console.error("Error fetching data:", error)
-      setLoading(false) // También asegúrate de manejar errores adecuadamente
+      setLoading(false)
     })
   }, [])
 
