@@ -29,8 +29,13 @@ function App() {
   return (
     <>
       <h1>Recursos</h1>
+      <nav className='index'>
+        {nestedData.map((category) => (
+          <a key={category.categoryId} href={`#${category.categoryId}`}>{category.categoryName}</a>
+        ))}
+      </nav>
       {nestedData.map((category) => (
-        <div key={category.categoryId}>
+        <div key={category.categoryId} id={category.categoryId}>
           <h2>{category.categoryName}</h2>
           <ul>
             {category.items.map((item) => (

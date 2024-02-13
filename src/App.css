@@ -10,8 +10,20 @@ hr{
   opacity: .2;
   margin-top: 25px;
 }
+
+nav{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 70%;
+  margin: 50px auto;
+
+}
+
 ul{
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 
@@ -20,6 +32,7 @@ ul{
     box-shadow: 5px 5px 10px #0005;
     padding: 10px 15px;
     border-radius: 5px;
+    max-width: 250px;
 
     p{
       font-size: smaller;
