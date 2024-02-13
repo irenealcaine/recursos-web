@@ -50,6 +50,13 @@ function App() {
           <hr />
         </div>
       ))}
+      <nav className='footer'>
+        <a href="mailto:irenealcainealvarez@gmail.com?Subject=Charlemos!" rel="noopener noreferrer" target="_blank">Contacto</a>
+        <a href="https://github.com/irenealcaine" rel="noopener noreferrer" target="_blank">Github</a>
+        <a href="https://www.linkedin.com/in/irenealcaine/" rel="noopener noreferrer" target="_blank">Linkedin</a>
+        <a href="https://irenealcainealvarez.es" rel="noopener noreferrer" target="_blank">Portfolio</a>
+
+      </nav>
     </>
   )
 }
