@@ -55,7 +55,6 @@ function App() {
         <a href="https://github.com/irenealcaine" rel="noopener noreferrer" target="_blank">Github</a>
         <a href="https://www.linkedin.com/in/irenealcaine/" rel="noopener noreferrer" target="_blank">Linkedin</a>
         <a href="https://irenealcainealvarez.es" rel="noopener noreferrer" target="_blank">Portfolio</a>
-
       </nav>
     </>
   )
