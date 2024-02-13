@@ -5,18 +5,23 @@ function App() {
 
   const [categories, setCategories] = useState([])
   const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_CATEGORY_SHEET)
-      .then((response) => response.json())
-      .then((data) => setCategories(data))
+    setLoading(true)
 
-    fetch(import.meta.env.VITE_ITEM_SHEET)
-      .then((response) => response.json())
-      .then((data) => setItems(data))
+    Promise.all([
+      fetch(import.meta.env.VITE_CATEGORY_SHEET).then(response => response.json()),
+      fetch(import.meta.env.VITE_ITEM_SHEET).then(response => response.json())
+    ]).then(([categoriesData, itemsData]) => {
+      setCategories(categoriesData)
+      setItems(itemsData)
+      setLoading(false)
+    }).catch((error) => {
+      console.error("Error fetching data:", error)
+      setLoading(false) // También asegúrate de manejar errores adecuadamente
+    })
   }, [])
-  // console.log(categories);
-  // console.log(items);
 
   const nestedData = categories.map(category => {
     return {
@@ -29,6 +34,7 @@ function App() {
   return (
     <>
       <h1>Recursos</h1>
+      {loading && <div class="loader"></div>}
       <nav className='index'>
         {nestedData.map((category) => (
           <a key={category.categoryId} href={`#${category.categoryId}`}>{category.categoryName}</a>
