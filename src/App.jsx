@@ -75,7 +75,7 @@ function App() {
         <div key={category.categoryId} id={category.categoryId}>
           <h2>{category.categoryName}</h2>
           {category.subcategories.map((subcategory) => (
-            <div className="subcategory">
+            <div key={subcategory.id} className="subcategory">
 
               <h3>{subcategory.subcategoryName}</h3>
               <ul>

@@ -21,11 +21,16 @@ body {
 h1 {
   font-size: 3.2em;
   margin: 1rem 0;
+
 }
 
 h2{
   font-size: 2.3em;
   margin: 1rem 0 2rem 0;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(104, 189, 189) ;
+  text-decoration-thickness: 2px;
 }
 h3{
   font-size: 1.5em;

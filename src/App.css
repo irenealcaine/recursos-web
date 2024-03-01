@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1180px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
@@ -29,15 +29,28 @@ nav{
 ul{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
 
   li{
     border: 1px solid #aaa;
-    box-shadow: 5px 5px 10px #0005;
+    box-shadow: 5px 5px 0px #aaa;
     padding: 10px 15px;
     border-radius: 5px;
     width: 250px;
+    height: fit-content;
+    transition: all .2s ease;
+
+    &:hover{
+      translate: 4px 4px;
+      box-shadow: 1px 1px 0px #aaa;
+    }
+
+    a{
+      display: block;
+      font-size: larger;
+      margin-bottom: 10px;
+    }
 
     p{
       font-size: smaller;
