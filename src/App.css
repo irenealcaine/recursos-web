@@ -1,5 +1,5 @@
 #root {
-  max-width: 1180px;
+  max-width: 1000px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
@@ -12,8 +12,9 @@
 
 hr{
   width: 100%;
-  opacity: .2;
-  margin-top: 25px;
+  opacity: .5;
+  margin: 50px 0 ;
+  border: 2px solid rgb(104, 189, 189);
 }
 
 nav{
