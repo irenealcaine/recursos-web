@@ -20,7 +20,6 @@ function App() {
       setSubcategories(subcategoriesData)
       setItems(itemsData)
       setLoading(false)
-      console.log(items)
     }).catch((error) => {
       console.error("Error fetching data:", error)
       setLoading(false)
@@ -48,7 +47,7 @@ function App() {
     <>
       <h1>Recursos</h1>
       {loading
-        ? <div class="loader"></div>
+        ? <div className="loader"></div>
         : <div>
           <nav className='index'>
             {nestedData.map((category) => (
