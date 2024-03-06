@@ -65,40 +65,44 @@ function App() {
   return (
     <>
       <h1>Recursos</h1>
-      {loading && <div class="loader"></div>}
-      <nav className='index'>
-        {nestedData.map((category) => (
-          <a key={category.categoryId} href={`#${category.categoryId}`}>{category.categoryName}</a>
-        ))}
-      </nav>
-      {nestedData.map((category) => (
-        <div key={category.categoryId} id={category.categoryId}>
-          <h2>{category.categoryName}</h2>
-          {category.subcategories.map((subcategory) => (
-            <div key={subcategory.id} className="subcategory">
+      {loading
+        ? <div class="loader"></div>
+        : <div>
+          <nav className='index'>
+            {nestedData.map((category) => (
+              <a key={category.categoryId} href={`#${category.categoryId}`}>{category.categoryName}</a>
+            ))}
+          </nav>
+          {nestedData.map((category) => (
+            <div key={category.categoryId} id={category.categoryId}>
+              <h2>{category.categoryName}</h2>
+              {category.subcategories.map((subcategory) => (
+                <div key={subcategory.id} className="subcategory">
 
-              <h3>{subcategory.subcategoryName}</h3>
-              <ul>
-                {subcategory.items.map((item) => (
-                  <li key={item.itemId}>
-                    <a href={item.itemLink}>
-                      {item.itemName}
-                    </a>
-                    <p>{item.itemDesc && item.itemDesc}</p>
-                  </li>
-                ))}
-              </ul>
+                  <h3>{subcategory.subcategoryName}</h3>
+                  <ul>
+                    {subcategory.items.map((item) => (
+                      <li key={item.itemId}>
+                        <a href={item.itemLink}>
+                          {item.itemName}
+                        </a>
+                        <p>{item.itemDesc && item.itemDesc}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <hr />
             </div>
           ))}
-          <hr />
+          <nav className='footer'>
+            <a href="mailto:irenealcainealvarez@gmail.com?Subject=Charlemos!" rel="noopener noreferrer" target="_blank">Contacto</a>
+            <a href="https://github.com/irenealcaine" rel="noopener noreferrer" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/irenealcaine/" rel="noopener noreferrer" target="_blank">Linkedin</a>
+            <a href="https://irenealcainealvarez.es" rel="noopener noreferrer" target="_blank">Portfolio</a>
+          </nav>
         </div>
-      ))}
-      <nav className='footer'>
-        <a href="mailto:irenealcainealvarez@gmail.com?Subject=Charlemos!" rel="noopener noreferrer" target="_blank">Contacto</a>
-        <a href="https://github.com/irenealcaine" rel="noopener noreferrer" target="_blank">Github</a>
-        <a href="https://www.linkedin.com/in/irenealcaine/" rel="noopener noreferrer" target="_blank">Linkedin</a>
-        <a href="https://irenealcainealvarez.es" rel="noopener noreferrer" target="_blank">Portfolio</a>
-      </nav>
+      }
     </>
   )
 }
