@@ -27,40 +27,22 @@ function App() {
     })
   }, [])
 
-  // const nestedData = categories.map(category => {
-  //   return {
-  //     ...category,
-  //     subcategories: subcategories.filter(subcategory => category.categoryId === subcategory.categoryId)
-  //   };
-  // });
-
-  // const doubledNestedData = subcategories.map(subcategory => {
-  //   return {
-  //     ...subcategory,
-  //     items: items.filter(item => subcategory.subcategoryId === item.subcategoryId)
-  //   };
-  // });
 
   const nestedData = categories.map(category => {
-    // Primero, filtra las subcategorías que pertenecen a esta categoría.
     const subcategoriesWithItems = subcategories
       .filter(subcategory => category.categoryId === subcategory.categoryId)
       .map(subcategory => {
-        // Luego, para cada subcategoría, filtra los items que pertenecen a esta subcategoría.
         return {
           ...subcategory,
           items: items.filter(item => item.subcategoryId === subcategory.subcategoryId)
         };
       });
 
-    // Finalmente, retorna la categoría con sus subcategorías (y los items ya anidados dentro de estas).
     return {
       ...category,
       subcategories: subcategoriesWithItems
     };
   });
-
-  console.log(nestedData)
 
   return (
     <>
